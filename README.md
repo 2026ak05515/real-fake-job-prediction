@@ -24,10 +24,16 @@ Files in the repository:
 * model/: All five models saved as .pkl pipelines
 
 # d. Models used
+Comparison Table with the evaluation metrics calculated for all the 5 models is shown below:
 | Model | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Support Vector Machine | 0.9832 | 0.9626 | 0.8418 | 0.8232 | 0.8324 | 0.8236 |
 | Logistic Regression | 0.9815 | 0.9873 | 0.7725 | 0.9006 | 0.8316 | 0.8246 |
 | Decision Tree | 0.9678 | 0.9142 | 0.6602 | 0.7514 | 0.7028 | 0.6875 |
-| Naive Bayes | 0.9499 | 0.9796 | 0.5031 | 0.8895 | 0.6427 | 0.6471 |
 | KNN | 0.9312 | 0.9611 | 0.4190 | 0.9282 | 0.5773 | 0.5972 |
+| Naive Bayes | 0.9499 | 0.9796 | 0.5031 | 0.8895 | 0.6427 | 0.6471 |
+| Support Vector Machine | 0.9832 | 0.9626 | 0.8418 | 0.8232 | 0.8324 | 0.8236 |
+
+Observations on the performance of each model
+| ML Model Name | Observation about model performance |
+| :--- | :--- |
+| Logistic Regression | Achieved a very high AUC (0.9873) and strong recall (0.9006), proving exceptionally effective at catching fraudulent postings. However, its lower precision (0.7725) indicates a higher rate of false positives on legitimate listings. |
