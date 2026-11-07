@@ -128,7 +128,7 @@ if uploaded_file is not None:
                 "F1 Score": "{:.4f}",
                 "MCC": "{:.4f}"
             }),
-            use_container_width=True
+            width='stretch'
         )
 
         st.markdown("---")
@@ -172,4 +172,4 @@ if uploaded_file is not None:
                 st.markdown("#### Classification Report")
                 report_dict = classification_report(y_test, y_pred_sel, output_dict=True, zero_division=0)
                 report_df = pd.DataFrame(report_dict).transpose()
-                st.dataframe(report_df.style.format("{:.4f}"), use_container_width=True)
+                st.dataframe(report_df.style.format("{:.4f}"), width='stretch')
