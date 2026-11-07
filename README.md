@@ -24,4 +24,10 @@ Files in the repository:
 * model/: All five models saved as .pkl pipelines
 
 # d. Models used
-
+| Model | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Support Vector Machine | 0.9832214[cite: 2] | 0.9626188[cite: 2] | 0.8418079[cite: 2] | 0.8232044[cite: 2] | 0.8324022[cite: 2] | 0.8236290[cite: 2] |
+| Logistic Regression[cite: 2] | 0.9815436[cite: 2] | 0.987316[cite: 2] | 0.7725118[cite: 2] | 0.9005524[cite: 2] | 0.8316326[cite: 2] | 0.8246355[cite: 2] |
+| Decision Tree[cite: 2] | 0.9678411[cite: 2] | 0.9141628[cite: 2] | 0.6601941[cite: 2] | 0.7513812[cite: 2] | 0.7028423[cite: 2] | 0.6875225[cite: 2] |
+| Naive Bayes[cite: 2] | 0.9499440[cite: 2] | 0.9796190[cite: 2] | 0.503125[cite: 2] | 0.8895027[cite: 2] | 0.6427145[cite: 2] | 0.6471412[cite: 2] |
+| KNN[cite: 2] | 0.9312080[cite: 2] | 0.9610851[cite: 2] | 0.4189526[cite: 2] | 0.9281767[cite: 2] | 0.5773195[cite: 2] | 0.597151[cite: 2] |
