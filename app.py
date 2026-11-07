@@ -40,6 +40,7 @@ uploaded_file = st.file_uploader("Upload Test CSV (with features and target 'fra
 if uploaded_file is not None:
     test_df = pd.read_csv(uploaded_file)
     st.success("Test file uploaded successfully.")
+    st.dataframe(test_df.head())
     st.write(f"**Dataset Shape:** {test_df.shape[0]} rows × {test_df.shape[1]} columns")
 
     # Load first model to dynamically retrieve required feature columns
@@ -67,7 +68,7 @@ if uploaded_file is not None:
     for col in cat_cols:
         test_df[col] = test_df[col].replace({None: "Unspecified"}).fillna("Unspecified").astype(str)
     for col in num_cols:
-        test_df[col] = test_df[col].fillna(0)
+        test_df[col] = test_df[col].fillna(0).astype(int)
 
     # Features and Target
     X_test = test_df[text_cols + cat_cols + num_cols]
