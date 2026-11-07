@@ -29,7 +29,7 @@ Upload your test dataset to evaluate and compare machine learning classification
 models = {
     "Logistic Regression": "logistic_regression_model.pkl",
     "Decision Tree": "decision_tree_model.pkl",
-    "KNN": "kNN_model.pkl",
+    "KNN": "KNN_model.pkl",
     "Naive Bayes": "naive_bayes_multinomial_model.pkl",
     "Support Vector Machine": "support_vector_machine_model.pkl"
 }
