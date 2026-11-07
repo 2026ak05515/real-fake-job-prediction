@@ -13,3 +13,15 @@ With the rapid expansion of digital recruitment platforms, online job scams and 
 
 [Real or Fake] : Job Description Prediction
 This dataset contains nearly 18K job descriptions out of which about 800 are fake. The data consists of both textual information and meta-information about the jobs. The dataset can be used to create classification models which can learn the job descriptions which are fraudulent.
+
+# c. Github Repository Link
+https://github.com/2026ak05515/real-fake-job-prediction
+
+Files in the repository:
+* app.py: the Streamlit app, which loads the saved models and never retrains
+* requirements.txt
+* test_data.csv
+* model/: All five models saved as .pkl pipelines
+
+# d. Models used
+
