@@ -21,7 +21,7 @@ Upload your test dataset to evaluate and compare machine learning classification
 - **Logistic Regression**
 - **Decision Tree Classifier**
 - **K-Nearest Neighbors (KNN)**
-- **Naive Bayes Classifier**
+- **Naive Bayes Classifier - Multinomial**
 - **Support Vector Machine (SVM)**
 """)
 
@@ -30,7 +30,7 @@ models = {
     "Logistic Regression": "logistic_regression_model.pkl",
     "Decision Tree": "decision_tree_model.pkl",
     "KNN": "KNN_model.pkl",
-    "Naive Bayes": "naive_bayes_multinomial_model.pkl",
+    "Naive Bayes - Multinomial": "naive_bayes_multinomial_model.pkl",
     "Support Vector Machine": "support_vector_machine_model.pkl"
 }
 
