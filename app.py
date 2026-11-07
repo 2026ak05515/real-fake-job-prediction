@@ -107,6 +107,16 @@ if uploaded_file is not None:
 
     if results:
         results_df = pd.DataFrame(results).sort_values(by="F1 Score", ascending=False)
+
+        # Best model based on F1 Score
+        winner = results_df.loc[
+            results_df["F1 Score"].idxmax()
+        ]
+
+        st.success(
+            f"🏆 Best Model: {winner['Model']} "
+            f"(F1 Score = {winner['F1 Score']:.4f})"
+        )
         
         st.subheader("📊 Overall Model Comparison")
         st.dataframe(
