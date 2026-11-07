@@ -128,6 +128,7 @@ if uploaded_file is not None:
                 "F1 Score": "{:.4f}",
                 "MCC": "{:.4f}"
             }),
+            hide_index=True,
             width='stretch'
         )
 
