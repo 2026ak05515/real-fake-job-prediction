@@ -33,8 +33,8 @@ Comparison Table with the evaluation metrics calculated for all the 5 models is 
 | Naive Bayes | 0.9499 | 0.9796 | 0.5031 | 0.8895 | 0.6427 | 0.6471 |
 | Support Vector Machine | 0.9832 | 0.9626 | 0.8418 | 0.8232 | 0.8324 | 0.8236 |
 
-Observations on the performance of each model:
 
+Observations on the performance of each model:
 | ML Model Name | Observation about model performance |
 | :--- | :--- |
 | Logistic Regression | Achieved a very high AUC (0.9873) and strong recall (0.9006), proving exceptionally effective at catching fraudulent postings. However, its lower precision (0.7725) indicates a higher rate of false positives on legitimate listings. |
