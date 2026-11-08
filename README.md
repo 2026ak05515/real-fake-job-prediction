@@ -14,6 +14,17 @@ With the rapid expansion of digital recruitment platforms, online job scams and 
 [Real or Fake] - Job Description Prediction :
 This dataset contains nearly 18K job descriptions out of which about 800 are fake. The data consists of both textual information and meta-information about the jobs. The dataset can be used to create classification models which can learn the job descriptions which are fraudulent.
 
+Feature Engineering & Preprocessing Pipeline: To handle the heterogeneous mix of unstructured text, categorical metadata and binary flags, a custom ColumnTransformer pipeline was implemented.
+
+Text Columns (text_cols): Processed using TfidfVectorizer with custom maximum features and English stop-word removal. Columns involved are title, description, requirements, company_profile, benefits.
+Categorical Columns (cat_cols): Processed using OneHotEncoder ignoring unknown categories and filtering with min_frequency. Columns involved are location, department, employment_type, required_experience, required_education, industry, function.
+Numerical/Binary Columns (num_cols): Passed through directly without scaling. Columns involved are telecommuting, has_company_logo, has_questions.
+
+Also, below features are dropped as part of pre-processing,
+
+job_id (Unique Identifier): Correctly dropping high-cardinality ID columns prevents the model from memorizing arbitrary row identifiers, avoiding overfitting and noise.
+salary_range (High Missingness): An 83.96% missing rate (15,012 out of 17,880 rows) makes imputation unreliable and risky, as imputing that much synthetic data would heavily bias the distribution. If 70-90% of rows are missing, the feature contributes very little to the model. Due to large amount of missing data, it was dropped.
+
 # c. Github Repository Link
 https://github.com/2026ak05515/real-fake-job-prediction
 
