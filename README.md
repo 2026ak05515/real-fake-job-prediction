@@ -32,7 +32,9 @@ Files in the repository:
 * app.py: the Streamlit app, which loads the saved models and never retrains
 * requirements.txt
 * test_data.csv
-* model/: All five models saved as .pkl pipelines
+* model/: All five models .pkl files
+* train/: All five models training and split_train_test source code .ipynb files
+
 
 # d. Models used
 Comparison Table with the evaluation metrics calculated for all the 5 models is shown below:
