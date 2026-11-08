@@ -11,7 +11,7 @@ With the rapid expansion of digital recruitment platforms, online job scams and 
 | Target | 1 (fraudulent) |
 | Instances | 17880 |
 
-[Real or Fake] : Job Description Prediction
+[Real or Fake] - Job Description Prediction :
 This dataset contains nearly 18K job descriptions out of which about 800 are fake. The data consists of both textual information and meta-information about the jobs. The dataset can be used to create classification models which can learn the job descriptions which are fraudulent.
 
 # c. Github Repository Link
