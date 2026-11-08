@@ -34,7 +34,7 @@ models = {
     "Support Vector Machine": "model/support_vector_machine_model.pkl"
 }
 
-# Requirement a: Dataset upload option (CSV)
+# Dataset upload option (CSV)
 uploaded_file = st.file_uploader("Upload Test CSV (with features and target 'fraudulent')", type=["csv"])
 
 if uploaded_file is not None:
@@ -43,13 +43,22 @@ if uploaded_file is not None:
     st.dataframe(test_df.head())
     st.write(f"**Dataset Shape:** {test_df.shape[0]} rows × {test_df.shape[1]} columns")
 
-    # Load first model to dynamically retrieve required feature columns
+    # Load first model to dynamically retrieve required feature columns safely
     try:
         first_model_file = next(iter(models.values()))
         saved_artifact = joblib.load(first_model_file)
-        text_cols = saved_artifact["text_cols"]
-        cat_cols = saved_artifact["cat_cols"]
-        num_cols = saved_artifact["num_cols"]
+        
+        # Check if saved as a dictionary container or raw pipeline
+        if isinstance(saved_artifact, dict):
+            text_cols = saved_artifact["text_cols"]
+            cat_cols = saved_artifact["cat_cols"]
+            num_cols = saved_artifact["num_cols"]
+        else:
+            # Fallback default columns if saved as a raw pipeline
+            text_cols = ["title", "description", "requirements", "company_profile", "benefits"]
+            cat_cols = ["location", "department", "employment_type", "required_experience", "required_education", "industry", "function"]
+            num_cols = ["telecommuting", "has_company_logo", "has_questions"]
+            
     except Exception as e:
         st.error(f"Error loading model artifacts: {e}")
         st.stop()
@@ -81,7 +90,13 @@ if uploaded_file is not None:
     for model_name, model_file in models.items():
         try:
             saved = joblib.load(model_file)
-            model = saved["model"]
+            
+            # Robust extraction for dictionary or raw pipeline format
+            if isinstance(saved, dict) and "model" in saved:
+                model = saved["model"]
+            else:
+                model = saved
+                
             trained_models[model_name] = model
 
             y_pred = model.predict(X_test)
@@ -129,12 +144,12 @@ if uploaded_file is not None:
                 "MCC": "{:.4f}"
             }),
             hide_index=True,
-            width='stretch'
+            use_container_width=True
         )
 
         st.markdown("---")
 
-        # Requirement b: Model selection dropdown (if multiple models)
+        # Model selection dropdown
         st.subheader("🔍 Individual Model Inspector")
         selected_model_name = st.selectbox(
             "Select a model to view detailed evaluation metrics and confusion matrix:",
@@ -145,7 +160,7 @@ if uploaded_file is not None:
             selected_model = trained_models[selected_model_name]
             y_pred_sel = selected_model.predict(X_test)
 
-            # Requirement c: Display of evaluation metrics
+            # Display of evaluation metrics
             st.markdown(f"### Performance Metrics for: **{selected_model_name}**")
             m1, m2, m3, m4, m5, m6 = st.columns(6)
             
@@ -157,7 +172,7 @@ if uploaded_file is not None:
             m5.metric("F1 Score", f"{sel_metrics['F1 Score']:.4f}")
             m6.metric("MCC", f"{sel_metrics['MCC']:.4f}")
 
-            # Requirement d: Confusion matrix or classification report
+            # Confusion matrix and classification report
             col_cm, col_cr = st.columns(2)
 
             with col_cm:
@@ -173,4 +188,4 @@ if uploaded_file is not None:
                 st.markdown("#### Classification Report")
                 report_dict = classification_report(y_test, y_pred_sel, output_dict=True, zero_division=0)
                 report_df = pd.DataFrame(report_dict).transpose()
-                st.dataframe(report_df.style.format("{:.4f}"), width='stretch')
+                st.dataframe(report_df.style.format("{:.4f}"), use_container_width=True)
