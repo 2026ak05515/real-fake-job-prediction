@@ -28,10 +28,10 @@ Comparison Table with the evaluation metrics calculated for all the 5 models is 
 | Model | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Logistic Regression | 0.9815 | 0.9873 | 0.7725 | 0.9006 | 0.8316 | 0.8246 |
-| Decision Tree | 0.9678 | 0.9142 | 0.6602 | 0.7514 | 0.7028 | 0.6875 |
-| KNN | 0.9312 | 0.9611 | 0.4190 | 0.9282 | 0.5773 | 0.5972 |
-| Naive Bayes | 0.9499 | 0.9796 | 0.5031 | 0.8895 | 0.6427 | 0.6471 |
-| Support Vector Machine | 0.9832 | 0.9626 | 0.8418 | 0.8232 | 0.8324 | 0.8236 |
+| Decision Tree | 0.9636 | 0.9169 | 0.6123 | 0.7680 | 0.6814 | 0.6671 |
+| KNN | 0.9326 | 0.9611 | 0.4246 | 0.9337 | 0.5838 | 0.6038 |
+| Naive Bayes - Multinomial | 0.9497 | 0.9796 | 0.5016 | 0.8895 | 0.6414 | 0.6460 |
+| Support Vector Machine | 0.9835 | 0.9626 | 0.8466 | 0.8232 | 0.8347 | 0.8261 |
 
 
 Observations on the performance of each model:
