@@ -16,9 +16,9 @@ This dataset contains nearly 18K job descriptions out of which about 800 are fak
 
 Feature Engineering & Preprocessing Pipeline: To handle the heterogeneous mix of unstructured text, categorical metadata and binary flags, a custom ColumnTransformer pipeline was implemented.
 
-Text Columns (text_cols): Processed using TfidfVectorizer with custom maximum features and English stop-word removal. Columns involved are title, description, requirements, company_profile, benefits.
-Categorical Columns (cat_cols): Processed using OneHotEncoder ignoring unknown categories and filtering with min_frequency. Columns involved are location, department, employment_type, required_experience, required_education, industry, function.
-Numerical/Binary Columns (num_cols): Passed through directly without scaling. Columns involved are telecommuting, has_company_logo, has_questions.
+Text Columns (text_cols): Processed using TfidfVectorizer with custom maximum features and English stop-word removal. Features involved are title, description, requirements, company_profile, benefits.
+Categorical Columns (cat_cols): Processed using OneHotEncoder ignoring unknown categories and filtering with min_frequency. Features involved are location, department, employment_type, required_experience, required_education, industry, function.
+Numerical/Binary Columns (num_cols): Passed through directly without scaling. Features involved are telecommuting, has_company_logo, has_questions.
 
 Also, below features are dropped as part of pre-processing,
 
