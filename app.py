@@ -27,11 +27,11 @@ Upload your test dataset to evaluate and compare machine learning classification
 
 # Define Models dictionary (pointing to your saved pkl files)
 models = {
-    "Logistic Regression": BASE_DIR / "model" / "logistic_regression_model.pkl",
-    "Decision Tree": BASE_DIR / "model" / "decision_tree_model.pkl",
-    "KNN": BASE_DIR / "model" / "KNN_model.pkl",
-    "Naive Bayes - Multinomial": BASE_DIR / "model" / "naive_bayes_multinomial_model.pkl",
-    "Support Vector Machine": BASE_DIR / "model" / "support_vector_machine_model.pkl"
+    "Logistic Regression": "model/logistic_regression_model.pkl",
+    "Decision Tree": "model/decision_tree_model.pkl",
+    "KNN": "model/KNN_model.pkl",
+    "Naive Bayes - Multinomial": "model/naive_bayes_multinomial_model.pkl",
+    "Support Vector Machine": "model/support_vector_machine_model.pkl"
 }
 
 # Requirement a: Dataset upload option (CSV)
